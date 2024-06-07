@@ -3,6 +3,7 @@ import { ReqBody } from '../../common/types/express.types';
 import createHttpError from 'http-errors';
 
 export const getAccounts = async () => {
+    throw new Error('2');
     return AccountModel.findOne({});
 };
 

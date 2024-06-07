@@ -22,10 +22,10 @@ app.use(errorHandler);
 
 process
     .on('unhandledRejection', (reason, p) => {
-        console.error(reason, 'Unhandled Rejection at Promise', p);
+        console.error('Unhandled Rejection at Promise');
     })
     .on('uncaughtException', (err) => {
-        console.error(err, 'Uncaught Exception thrown');
+        console.error('Uncaught Exception thrown');
     });
 
 connectDB().then(() => {
