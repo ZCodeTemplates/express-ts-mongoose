@@ -20,14 +20,6 @@ app.use('/api', routes);
 
 app.use(errorHandler);
 
-process
-    .on('unhandledRejection', (reason, p) => {
-        console.error('Unhandled Rejection at Promise');
-    })
-    .on('uncaughtException', (err) => {
-        console.error('Uncaught Exception thrown');
-    });
-
 connectDB().then(() => {
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`);

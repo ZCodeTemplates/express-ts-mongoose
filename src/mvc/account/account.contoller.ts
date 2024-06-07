@@ -1,9 +1,7 @@
 import AccountModel from './account.model';
 import { ReqBody } from '../../common/types/express.types';
-import createHttpError from 'http-errors';
 
 export const getAccounts = async () => {
-    throw new Error('2');
     return AccountModel.findOne({});
 };
 
@@ -11,10 +9,6 @@ export const createAccount = async (req: ReqBody<{ email: string; name: string }
     const {
         body: { name, email }
     } = req;
-    if (!name) {
-        throw createHttpError.NotFound("Couldn't find product.");
-    }
-
     return AccountModel.create({ name, email });
 };
 

@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
 export type ReqBody<T> = Request<any, any, T>;
 export type ReqParams<T> = Request<T>;
